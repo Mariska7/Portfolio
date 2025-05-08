@@ -1,0 +1,155 @@
+/* 基本样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.envelope-container {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.envelope {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transform-origin: bottom;
+    transition: transform 1s ease;
+}
+
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #00a4f0;
+    top: 0;
+    left: 0;
+    transition: top 1s ease;
+}
+
+/* CV部分 */
+.cv {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.cv a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+.cv a:hover {
+    text-decoration: underline;
+}
+
+/* 动画开始时信封翻开 */
+.envelope.open .flap {
+    top: -50%;
+}
+
+.envelope.open {
+    transform: rotateX(90deg);
+}
+
+/* CV的显示动画 */
+.cv.show {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 深色主题 */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray;
+    z-index: 1000;
+    transition: background-color 0.5s;
+}
+
+body.dark-theme header {
+    background-color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.left-nav, .right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.home-link {
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.5s;
+    margin-right: 20px;
+}
+
+body.dark-theme .home-link {
+    color: #ffffff;
+}
+
+.theme-toggle-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    transition: color 0.5s;
+}
+
+body.dark-theme .theme-toggle-button i {
+    color: yellow;
+}
+
+.nav-link {
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+body.dark-theme .nav-link {
+    color: #ffffff;
+}
