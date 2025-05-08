@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portefeuille</title>
+    <link rel="stylesheet" href="style/Chanllege.css">
+</head>
+<body>
+    <div class="portfolio-section" id="portfolio-section">
+        <div class="portfolio-gallery">
+            <img src="Foto/image.png" alt="image 1" class="portfolio-image"
+            onclick="openProjectModal('De Alpen Jagers', 
+            'Voor de HBS Alpenjagers Archery Club hebben we een nieuwe website ontwikkeld. De site biedt informatie en ondersteuning voor leden en bezoekers, inclusief een speciale inlogsectie.<br><br><span class=\'mijn-bijdrage\'>Mijn bijdrage:</span><br>✅ Ontwerp & ontwikkeling van de pagina’s Archery, Barebow, Compound en Recurve (zelfde structuur, andere content).', 
+            'Foto/image.png', 'https://example.com/project1')">
+
+            <img src="Foto/image2.png" alt="image 2" class="portfolio-image"
+            onclick="openProjectModal('Vista Karting', 
+            'Voor dit project hebben we een website ontwikkeld voor het Vista Karten evenement. De website helpt deelnemers zich eenvoudig in te schrijven en automatisch in poules te verdelen. Dit bespaart tijd en voorkomt fouten in het inschrijfproces.<br><br><span class=\'mijn-bijdrage\'>Mijn bijdrage:</span><br>✅ Webdesign & Responsiveness<br>✅ Koppelen van pagina’s<br>✅ Banner & Footer ontwerp.', 
+            'Foto/image2.png', 'https://karten.rianne-evers.nl/HomeV2.php')">
+
+            <img src="Foto/image3.png" alt="image 3" class="portfolio-image"
+            onclick="openProjectModal('Agenda App',
+            'Voor Hogeschool hebben we een agenda-app ontwikkeld om planning te vergemakkelijken. De app heeft vergelijkbare functionaliteiten als Eduwart en TEAS, maar zonder online vergadermogelijkheden. Later heb ik meegewerkt aan de volledige frontend van de website. Als je wilt inloggen, gebruik dan de volgende gegevens: gebruikersnaam: admin, wachtwoord: admin123.<br><br><span class=\'mijn-bijdrage\'>Mijn bijdrage:</span><br>✅ Volledige frontend ontwikkeling<br>✅ Ondersteuning bij backend-functionaliteiten<br>✅ Meedenken met ontwerp en structuur van de app.', 
+            'Foto/image3.png', 'https://mariskaye.nl/login.php')">
+
+            <img src="Foto/Bands Introductie website.png" alt="Bands Introductie Website" class="portfolio-image"
+            onclick="openProjectModal(
+            'Bands Introductie Website',
+            'Dit project is een fansite die we als groep hebben gemaakt, gebaseerd op de favoriete bands van groepsleden. De website bevat uitgebreide informatie over de band, foto\'s, team prestaties en meer. Omdat we destijds nog beginners waren, is de website niet volledig afgewerkt. Ik heb niet meegewerkt aan de code, maar heb ideeën gegeven, de cover ontworpen, afbeeldingen gezocht en documentatie verzorgd.<br><br><span class=\'mijn-bijdrage\'>Mijn bijdrage:</span><br>✅ Ontwerp van de cover<br>✅ Afbeeldingen verzameld<br>✅ Inhoudelijke suggesties gegeven<br>✅ Documentatie opgesteld', 
+            'Foto/Bands Introductie website.png', 'http://127.0.0.1:3002/Index.html#')">
+        </div>
+    </div>
+
+    <script>
+    // openProjectModal 示例（确保此函数已在 JavaScript 文件中定义）
+    function openProjectModal(title, description, image, link) {
+        // 代码来打开模态框，显示项目信息
+        alert(title + '\n' + description + '\n' + link);
+    }
+    </script>
+</body>
+</html>
