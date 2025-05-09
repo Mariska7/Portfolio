@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Asap', sans-serif;
-    background: url('/Foto/foto.1.jpg') no-repeat center center/cover; /* 替换成你的背景图 */
+    background: url('/Foto/foto.1.jpg') no-repeat center center/cover; 
     transition: background-color 0.5s, color 0.5s;
     min-height: 100vh;
     display: flex;
