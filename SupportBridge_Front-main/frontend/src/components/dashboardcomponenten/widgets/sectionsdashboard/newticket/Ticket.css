@@ -1,0 +1,120 @@
+.Newticket-widgets{
+    position: absolute;
+    height: 85vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket-widget{
+    display: flex;
+    position: absolute;
+    width: 60vh;
+    height: 65vh;
+    bottom: 12%;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.ticket-form input {
+  font-size: 1rem;
+  border-radius: 15px;
+  border: 1px solid #9B9B9B;
+  font-family: inherit;
+  padding-left: 10px;
+}
+
+.Name-input{
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    left: 10%;
+    top: 25%;
+    text-align: left;
+}
+.StudNr-input{
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    top: 37%;
+    left: 10%;
+    text-align: left;
+}
+.Email-input{
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    right: 10%;
+    top: 37%;
+    text-align: left;
+}
+.Subject-input{
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    right: 10%;
+    top: 25%;
+    text-align: left;
+}
+
+.Question-input {
+  position: absolute;
+  width: 339px;
+  height: 100px;
+  left: 10%;
+  bottom: 26%;
+  border-radius: 10px;
+  resize: none;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+
+.ticket-widget, .SubmitTicket{
+    align-items: center;
+}
+
+.SubmitTicket {
+  bottom: 10%;
+  left: 150px;
+  position: absolute;
+  background-color: #000000;
+  color: white;
+  height: 40px;
+  width: 150px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+.SubmitTicket:hover {
+  background-color: #1a5cd6;
+}
+.Newticket-text{
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 35px;
+}
+.parttext{
+    color: #406DF4;
+}
+
+.Question-input {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;                   
+  color: #333;              
+}

@@ -1,0 +1,243 @@
+.home-widgets {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 68vh;
+    bottom: 0%;
+    left: 0;
+}
+
+/* Top long widget */
+.UsersandGroups {
+    display: flex;
+    position: absolute;
+    bottom: 50%;
+    left: 2%;
+    width: 75vw;
+    max-width: 900px;
+    min-width: 280px;
+    height: 200px;
+}
+
+/* Left bottom widget */
+.Statistics {
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+    width: 40vw;
+    max-width: 600px;
+    min-width: 250px;
+    height: 200px;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Right bottom widget */
+.precentagethingy {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+    width: 15vw;
+    max-width: 225px;
+    min-width: 180px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Agenda {
+    position: absolute;
+    bottom: 3%;
+    right: 2%;
+    width: 35vw;
+    max-width: 550px;
+    min-width: 280px;
+    height: 470px;
+    display: flex;
+    align-items: flex-start;
+}
+.rbc-toolbar .rbc-toolbar-label {
+    text-align: right !important;
+}
+
+.users-groups-switch-container {
+    display: flex;
+    position: absolute;
+    background-color: white;
+    border-radius: 25px;
+    width: 160px;
+    height: 40px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    top: 1%; 
+    left: 3%;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.switch-option {
+    padding: 6px 12px;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 50;
+    color: black;
+    transition: color 0.3s ease;
+    user-select: none; 
+    white-space: nowrap;
+    position: relative; 
+    flex-grow: 1;
+    text-align: center;
+    font-size: 12px;
+}
+
+.switch-option.active {
+    color: #ffffff;
+    font-weight: 60;
+}
+
+.switch-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #0D0E13;
+    border-radius: 20px;
+    transition: left 0.3s ease-in-out, width 0.3s ease-in-out; 
+    z-index: 1;
+}
+
+
+@media (max-width: 1518px), (max-height: 773px) {
+    .UsersandGroups {
+        width: 60vw;
+        min-width: 280px;
+    }
+
+    /* Shrink faster: narrower width */
+    .Statistics {
+        width: 45vw;
+        min-width: 220px; 
+        overflow: hidden;
+    }
+
+    .precentagethingy {
+        width: 18vw;
+        min-width: 180px;
+    }
+
+    .Agenda {
+        width: 35vw;
+        min-width: 280px;
+    }
+}
+
+@media (min-height: 824px){
+    .Agenda{
+        height: 500px;
+    }
+}
+/* ✅ MOBILE LAYOUT BELOW 990px */
+@media (max-width: 990px) {
+
+    .home-widgets {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 20%;
+        gap: 1rem;
+        padding: 1rem;
+        margin-top: 100px; /* ⬅️ adjust to your header height */
+        box-sizing: border-box;
+    }
+
+    .UsersandGroups {
+        position: static;
+        width: clamp(280px, 90vw, 600px);
+        height: 200px;
+    }
+    .users-groups-switch-container{
+        top: -7%;
+    }
+    /* 👇 Wrap these two side by side in a row */
+    .bottom-row {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .Statistics,
+    .precentagethingy {
+        position: static;
+        height: 180px;
+        width: clamp(180px, 40vw, 280px);
+        overflow: hidden;
+    }
+
+    .Agenda {
+        position: static;
+        width: clamp(280px, 90vw, 600px);
+        height: 400px;
+    }
+}
+
+@media (max-width: 1420px) {
+
+    .Statistics {
+        width: 35vw;
+        min-width: 220px; 
+    }
+    .precentagethingy{
+        left: 40%;
+    }
+
+}
+@media (max-width: 448px) {
+    .Statistics {
+        width: 40vw;
+        min-width: 90px;
+        overflow: hidden; 
+    }
+    .precentagethingy{
+        left: 35%;
+        min-width: 90px;
+        width: 40vw;
+    }
+}
+@media (min-width: 1500px) and (min-height: 900px){
+  .UsersandGroups {
+    top: 2%;
+    height: 220px;
+    width: 80vw;
+    max-width: 1100px;
+  }
+
+  /* Left bottom widget: Slightly larger */
+  .Statistics {
+    width: 45vw;
+    max-width: 700px;
+    height: 220px;
+    overflow: hidden;
+  }
+
+  /* Right bottom widget: Shift left and grow slightly */
+  .precentagethingy {
+    left: 42%; /* was 45% */
+    width: 20vw;
+    max-width: 280px;
+    height: 220px;
+  }
+
+  /* Right big widget: Taller */
+  .Agenda {
+    height: 550px; /* was 450px */
+    width: 40vw;
+    max-width: 700px;
+  }
+}
+
+

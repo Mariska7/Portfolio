@@ -1,0 +1,42 @@
+
+.percentage-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage-circle-svg {
+  transform: rotate(-90deg);
+}
+
+/* Background Circle */
+.percentage-circle-bg {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 10px;
+}
+
+/* Progress Circle (the "showing balk") */
+.percentage-circle-progress {
+  fill: none;
+  color: linear-gradient(90deg,rgba(109, 30, 247, 1) 0%, rgba(142, 69, 173, 1) 25%, rgba(161, 43, 122, 1) 100%);;
+  stroke-width: 10px;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+
+.percentage-circle-text {
+  font-weight: bold;
+  transform: rotate(90deg);
+  transform-origin: center;
+
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+.percentage-circle-progress {
+  fill: none;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.6s ease-in-out; /* slower and smoother */
+}

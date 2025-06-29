@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.headercolumn{
+    position: absolute;
+    top: 2%;
+    left: 1.5%;
+    width: 97%;
+    height: 30vh; /* Default height */
+    display: flex;
+    background-color: #0D0E13;
+    border-radius: 20px;
+    transition: height 0.5s ease;
+    z-index: 5;
+}
+
+/* New style for compact header */
+.headercolumn.compact {
+    height: 10vh; /* 10vh when not on Home tab */
+}
+
+.logoPagesection{
+    position: absolute;
+    top: 5%; /* Initial position */
+    left: 0;
+    width: 100%;
+    height: 50px; /* Fixed height container */
+    background-color: transparent;
+    transition: top 0.5s ease, transform 0.5s ease;
+}
+
+.headercolumn.compact .logoPagesection {
+    top: 50%; /* Center vertically within the compact header */
+    transform: translateY(-50%);
+}
+
+
+.logodashboardheader{
+    position: absolute;
+    top: -30%;
+    left: 7%;
+    font-size: 25px;
+    color: white;
+    font-family: "Cal Sans", sans-serif;
+    transition: top 0.5s ease, left 0.5s ease;
+}
+
+.headercolumn.compact .logodashboardheader {
+    top: 5%;
+    transform: translateY(-50%);
+    left: 7%;
+}
+
+
+.pageselection {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Already vertically centers its content relative to its own height */
+    position: absolute;
+    top: 0; /* Initial position relative to logoPagesection */
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%; /* Fills 50px height of logoPagesection */
+    --indicator-left: 0px;
+    --indicator-width: 0px;
+    gap: clamp(8px, 3vw, 40px);
+    transition: top 0.5s ease, transform 0.5s ease, gap 0.5s ease; /* Smooth transition */
+}
+
+.headercolumn.compact .pageselection {
+    top: 50%; /* Center vertically relative to logoPagesection */
+    transform: translate(-50%, -50%); /* Combine horizontal and vertical centering */
+    gap: 15px; /* Reduce gap between tabs for compact mode (can adjust if too tight) */
+}
+
+.pageLink {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-family: "Cal Sans", sans-serif;
+    font-size: 20px; /* Fixed size */
+    padding: 8px 16px; /* Fixed padding */
+    transition: color 0.3s; /* Only color transition */
+    cursor: pointer;
+    z-index: 1;
+}
+
+.slide-indicator {
+    position: absolute;
+    top: 50%;
+    left: var(--indicator-left);
+    width: var(--indicator-width);
+    height: clamp(24px, 4vh, 32px); /* Slightly shrink height */
+    background-color: #4B4E53;
+    border-radius: 8px;
+    transform: translateY(-50%);
+    transition: left 0.3s ease, width 0.3s ease, height 0.3s ease, top 0.3s ease;
+    z-index: -1;
+}
+
+.headercolumn.compact .slide-indicator {
+    height: 20px;
+    top: 50%;
+}
+
+.IconSectionHeader {
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    transition: top 0.5s ease;
+
+}
+
+.headercolumn.compact .IconSectionHeader {
+    top: 20%;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    height: clamp(28px, 5vw, 35px);
+    width: clamp(28px, 5vw, 35px);
+    transition: width 0.3s ease-out, background-color 0.3s ease-out, border 0.3s ease-out;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+    position: relative; /* For absolute positioning of input within it */
+    flex-shrink: 0; /* Prevent it from shrinking */
+    overflow: visible; /* Default to visible when closed */
+}
+
+.search-wrapper.open {
+    width: 250px; /* Expanded width for the search bar */
+    background-color: white; /* Background when open */
+    border: 1px solid #4B4E53; /* Add a subtle border when open */
+    overflow: hidden; /* Apply hidden when open to hide the input's overflow */
+}
+
+.search-input-expanded {
+    position: absolute; /* Position absolutely within search-wrapper */
+    left: 0;
+    top: 0;
+    width: calc(100% - 35px);
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 0 10px;
+    padding-right: 35px; /* Make space for the icon */
+    font-size: 16px;
+    font-family: "Cousine", monospace;
+    background: transparent;
+    outline: none;
+    z-index: 1;
+    color: black;
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Make it non-interactive when hidden */
+    transition: opacity 0.3s ease-out; /* Smooth transition for appearance */
+}
+
+.search-wrapper.open .search-input-expanded {
+    opacity: 1; /* Show when open */
+    pointer-events: auto; /* Make it interactive when open */
+}
+
+.search-circle {
+    position: absolute; /* Position absolutely to stay at the right edge */
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center */
+    width: clamp(28px, 5vw, 35px);
+    height: clamp(28px, 5vw, 35px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2; /* Ensure it's above the input */
+    background-color: #4B4E53; /* Default background */
+    border: 1px solid black; /* Default border */
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Apply hover effect to search-circle only when the search bar is NOT open */
+.search-circle:hover:not(.search-wrapper.open .search-circle) {
+    transform: translateY(-50%) scale(1.2); /* Scale from its current centered position */
+    opacity: 1;
+}
+
+/* Ensure the search-circle does not scale when the search bar is open */
+.search-wrapper.open .search-circle {
+    background-color: #4B4E53;
+    border: 1px solid black;
+    transform: translateY(-50%); /* Keep it centered vertically, no scale */
+    cursor: pointer; /* Keep cursor pointer */
+}
+
+.search-circle svg {
+    color: white;
+    width: 60%;
+    height: 60%;
+    transition: color 0.3s ease;
+}
+
+/* === Other Circle Icons Styling === */
+.circle {
+    width: clamp(28px, 5vw, 35px);
+    height: clamp(28px, 5vw, 35px);
+    border-radius: 50%;
+    background-color: #4B4E53;
+    opacity: 0.9;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent other circles from shrinking */
+    margin-left: clamp(4px, 1.2vw, 16px); /* Add gap here */
+}
+
+.circle:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Icon style inside the circle */
+.circle svg {
+    color: white;
+    width: 60%;
+    height: 60%;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    left: 3%;
+    top: 7%;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.hamburger:active {
+    transform: scale(0.9);
+}
+
+.GreetingText{
+    position: absolute;
+    bottom: 0;
+    left: 6%;
+    font-size: 25px;
+    color: white;
+    font-family: "pacifico";
+    transition: all 0.5s ease, opacity 0.5s ease; /* Added opacity to transition */
+}
+
+/* Adjust GreetingText when header is compact */
+.headercolumn.compact .GreetingText {
+    opacity: 0; /* Make it disappear */
+    visibility: hidden; /* Hide it from screen readers and interaction */
+}
+
+
+.HeaderNewticket{
+    position: absolute;
+    bottom: 15%;
+    right: 2%;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    width: 150px;
+    height: 35px;
+    font-family: "Cousine", monospace;
+    font-size: 15px;
+    transition: all 0.5s ease; /* Smooth transition for New Ticket button */
+}
+
+/* New style for the New Ticket button when header is compact */
+.HeaderNewticket.under-header {
+    position: absolute;
+    top: calc(10vh + 15%); /* Increased from 2% to 3% for a tiny bit more down */
+    right: 1.5%;
+    bottom: auto;
+    left: auto;
+    transform: translateY(0);
+    z-index: 5;
+    background-color: #0D0E13;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Mobile dropdown version of menu */
+@media (max-width: 990px) {
+    .hamburger {
+        display: block;
+        z-index: 10;
+    }
+
+    /* Reset logoPagesection to its default mobile behavior (non-centered) */
+    .logoPagesection {
+        top: 5%; /* Default mobile top */
+        transform: none; /* Remove translateY from desktop compact */
+        height: 50px; /* Keep fixed height */
+    }
+
+    /* Position logodashboardheader for mobile header (not compact) */
+    .logodashboardheader {
+        position: absolute;
+        top: -30%;
+        left: 7%;
+        font-size: 25px; /* Keep original font size */
+    }
+
+    /* Specific compact styles for logodashboardheader on mobile */
+    .headercolumn.compact .logodashboardheader {
+        font-size: 25px; /* Keep original font size even when compact on mobile */
+        top: 50%; /* Center logo vertically */
+        transform: translateY(-50%);
+        left: 7%; /* Keep it on the left */
+    }
+
+    /* Pageselection for mobile (dropdown behavior) */
+    .pageselection {
+        position: absolute;
+        top: 70px; /* directly under hamburger */
+        left: 0;
+        height: 25vh;
+        background-color: #1a1b1f;
+        flex-direction: column;
+        align-items: flex-start; /* Align text to the left */
+        padding: 15px 20px;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        display: none; /* Hidden by default */
+        z-index: 9;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        /* Ensure desktop compact styles are not applied here */
+        justify-content: flex-start; /* Override desktop compact centering */
+        gap: 0; /* Override desktop compact gap */
+    }
+
+    /* Mobile hamburger menu open state */
+    .pageselection.open {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .pageLink {
+        padding: 10px 0;
+        font-size: 18px; /* Keep original mobile font size */
+        width: 100%;
+        color: white;
+    }
+
+    /* Slide indicator hidden on mobile */
+    .slide-indicator {
+        display: none;
+    }
+
+    .headercolumn {
+        height: 25vh; /* Default mobile header height */
+        /* Removed flex-direction: column here to avoid conflicts with absolute positioning */
+    }
+
+    .headercolumn.compact {
+        height: 10vh; /* Mobile compact header height */
+    }
+
+    /* Greeting text on mobile */
+    .GreetingText{
+        font-size: 15px;
+        bottom: 5%;
+        /* If header is compact, it will fade out, as per desktop compact rule */
+    }
+
+    .HeaderNewticket.under-header {
+        top: calc(10vh + 3%); /* Position under the 10vh header on mobile too */
+        right: 1.5%;
+    }
+}
+@media (max-width: 525px) {
+    .GreetingText{
+        font-size: 10px;
+        bottom: 10%;
+    }
+}

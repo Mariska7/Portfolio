@@ -1,0 +1,105 @@
+/* src/popupwidgets/popupmenu.css */
+
+.popup-menu-container {
+  position: fixed;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  z-index: 10;
+  min-width: 200px;
+  max-width: 300px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSlideUp 0.2s ease-out forwards;
+  border: solid 1px black;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  color: #333; /* Darker text for readability */
+  font-size: 15px;
+  gap: 10px; /* Space between icon and text */
+}
+
+.popup-menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.popup-menu-item svg {
+  width: 20px;
+  height: 20px;
+  color: #666; /* Icon color */
+}
+
+.popup-menu-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 8px 0;
+}
+
+/* Specific content styling (examples) */
+.user-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 12px;
+}
+
+.user-popup-header .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #666;
+}
+
+.user-popup-header .info h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.user-popup-header .info p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* For other popup content, simple styling */
+.simple-popup-content {
+  padding: 5px 0;
+}
+
+.simple-popup-content p {
+  margin: 0;
+  padding: 8px 12px;
+  color: #555;
+  font-size: 14px;
+}

@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+.Groepen-dashboard {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2%;
+}
+
+.aanwijzenticket {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 60vh;
+    margin-bottom: 2rem;
+    position: relative;
+    background-color: white;
+    left: 7%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.aanwijzenticket::-webkit-scrollbar {
+    width: 8px;
+}
+
+.aanwijzenticket::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.aanwijzenticket::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.aanwijzenticket::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.header-with-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.titleAsigntickets {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.ticket-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-name {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.ticket-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.action-icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.plus-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.plus-icon-wrapper:hover {
+    background-color: #f0f0f0;
+}
+
+.plus-icon-wrapper .plus-icon {
+    color: black;
+    font-size: 16px;
+}
+
+.delete-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.delete-icon-wrapper:hover {
+    background-color: #f0f0f0;
+}
+
+.delete-icon-wrapper .delete-icon {
+    color: black;
+    font-size: 16px;
+}
+
+.info-icon {
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.info-icon:hover {
+    color: #333;
+}
+
+.ticket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.ticket-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #555;
+    height: 50px;
+    border: solid 1px #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.ticket-item:hover {
+    border-color: #a0a0a0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-name {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Ticket-agenda {
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+    width: 35vw;
+    max-width: 600px;
+    min-width: 280px;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.Title-Ticket-agenda {
+    position: absolute;
+    font-size: 30px;
+    top: 0;
+    left: 6%;
+    font-family: "Cal Sans", sans-serif;
+}
+
+.Date-Ticket-agenda {
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    top: 10%;
+    left: 6%;
+    font-family: "Cal Sans", sans-serif;
+}
+
+.Ticket-moment {
+    position: absolute;
+    bottom: 6%;
+    left: 6%;
+    width: 470px;
+    height: 300px;
+    background-color: #C7C7C7;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.Ticket-moment::-webkit-scrollbar {
+    width: 8px;
+}
+
+.Ticket-moment::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.Ticket-moment::-webkit-scrollbar-thumb {
+    background: #a0a0a0;
+    border-radius: 10px;
+}
+
+.Ticket-moment::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.Header-Ticket-moment {
+    background-color: white;
+    border-radius: 15px;
+    padding: 3px 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Header-Ticket-moment-item {
+    display: flex;
+    width: 100%;
+    color: #5D5C5C;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+.header-col-name { flex: 1.2; text-align: center; padding-left: 25px; font-family: "Inter", sans-serif; }
+.header-col-ticket { flex: 1.2; text-align: center; font-family: "Inter", sans-serif;}
+.header-col-date { flex: 1.2; text-align: center; font-family: "Inter", sans-serif;}
+.header-col-status { flex: 1.2; text-align: center; font-family: "Inter", sans-serif;}
+.header-col-arrow { flex: 0.6; text-align: right; padding-right: 10px; font-family: "Inter", sans-serif; }
+
+.Date-ticket-moment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.agenda-ticket-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #555;
+    height: 50px;
+    border: solid 1px #e0e0e0;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.agenda-ticket-item:hover {
+    border-color: #a0a0a0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agenda-col-name { flex: 1.1; text-align: center; padding-left: 25px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.agenda-col-ticket { flex: 1.1; text-align: center; }
+.agenda-col-date { flex: 1.1; text-align: center; }
+.agenda-col-status {
+    flex: 1.1;
+    text-align: center;
+    white-space: nowrap;
+}
+.agenda-col-arrow {
+    text-align: center;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px black;
+    justify-content: center;
+    width: 35px;
+    height: 33px;
+    margin: 0;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.agenda-col-arrow .svg-inline--fa { color: #888; }
+
+@media (max-width: 1024px) {
+    .Groepen-dashboard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aanwijzenticket {
+        width: 95%;
+        height: 40vh;
+        left: 0;
+        right: 0;
+        margin: 0 auto 1rem auto;
+    }
+
+    .Ticket-agenda {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width: 95%;
+        margin: 0 auto;
+        height: auto;
+    }
+
+    .Title-Ticket-agenda,
+    .Date-Ticket-agenda {
+        position: static;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .Ticket-moment {
+        width: 100%;
+        height: auto;
+    }
+
+    .Header-Ticket-moment-item,
+    .agenda-ticket-item {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        height: auto;
+        padding: 10px;
+    }
+
+    .header-col-name, .header-col-ticket, .header-col-date, .header-col-status, .header-col-arrow,
+    .agenda-col-name, .agenda-col-ticket, .agenda-col-date, .agenda-col-status, .agenda-col-arrow {
+        flex: none;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .agenda-col-status, .agenda-col-arrow {
+        display: block;
+        text-align: left;
+    }
+    .agenda-col-arrow .svg-inline--fa {
+        margin-left: 0;
+    }
+}
